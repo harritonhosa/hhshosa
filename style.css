@@ -1,0 +1,88 @@
+/* Harriton HOSA — soft blue theme.
+   EDIT COLOURS HERE ONLY: change the --blue values below once,
+   and every page changes together. No other file needs colour edits.
+   Fonts are Nunito (body, soft and rounded) and Quicksand (headings).
+   If Google Fonts is blocked at school, it falls back to system fonts
+   and the site still looks the same. */
+:root {
+  --navy: #0e3a5d;
+  --blue: #1b6aa6;
+  --sky: #4aa3df;
+  --sky-light: #dbeeff;
+  --sky-pale: #eef6fb;
+  --bg: #f2f8fc;
+  --ink: #243447;
+  --muted: #5a7086;
+  --line: #dbeaf5;
+  --card: #ffffff;
+  --gold: #7fb8dd;
+}
+* { box-sizing: border-box; }
+body {
+  font-family: "Nunito", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.65; margin: 0; color: var(--ink);
+  background: linear-gradient(180deg, #e8f3fa 0%, var(--bg) 320px);
+}
+a { color: var(--blue); }
+a:hover { text-decoration-thickness: 2px; }
+h1, h2, h3 { font-family: "Quicksand", "Nunito", system-ui, sans-serif; font-weight: 700; letter-spacing: .01em; }
+
+/* Header — soft blue gradient, neat like Google Sites */
+.site-header { background: linear-gradient(135deg, #0e3a5d 0%, #1b6aa6 55%, #2f8fc7 100%); color: #fff; padding: 1.75rem 1.5rem 1.5rem; }
+.site-header .wrap, main.wrap, .officers .wrap { max-width: 1020px; margin: 0 auto; }
+.header-top { display: flex; align-items: center; gap: 1rem; margin-bottom: .75rem; }
+.logo-img { width: 84px; height: 84px; flex-shrink: 0; border-radius: 50%; background: #fff; padding: 5px; object-fit: contain; box-shadow: 0 4px 14px rgba(0,0,0,.18); }
+.site-header h1 { margin: 0 0 .15rem; font-size: 2rem; }
+.site-header p { margin: 0; color: #d6eaf7; font-size: 1.02rem; }
+.site-header nav { display: flex; flex-wrap: wrap; gap: .55rem; margin-top: 1rem; }
+.site-header nav a { color: #fff; text-decoration: none; padding: .5rem .95rem; border: 1px solid rgba(255,255,255,.5); border-radius: 999px; font-weight: 700; font-size: .95rem; background: rgba(255,255,255,.08); }
+.site-header nav a[aria-current="page"] { background: #fff; color: var(--navy); border-color: #fff; }
+.site-header nav a:hover { background: rgba(255,255,255,.22); }
+
+main.wrap { padding: 1.75rem 1.5rem 2.5rem; }
+h2 { color: var(--navy); margin-top: 0; font-size: 1.45rem; }
+h3 { color: var(--navy); }
+.lead { font-size: 1.08rem; color: #33475e; }
+
+/* Hero / logo row on Home */
+.hero-logos { display: flex; align-items: center; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+.hero-logos img { background: #fff; border-radius: 16px; padding: .5rem; box-shadow: 0 4px 14px rgba(14,58,93,.10); }
+.hero-logos .harriton-logo { width: 118px; height: auto; border-radius: 50%; }
+.hero-logos .hosa-logo { width: 148px; height: auto; }
+.hosa-logo-small { width: 132px; height: auto; display: block; margin: 0 auto .75rem; background: #fff; border-radius: 16px; padding: .4rem; box-shadow: 0 4px 14px rgba(14,58,93,.08); }
+
+/* Two-column layout: left text, right embed / form */
+.columns { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; align-items: start; }
+@media (max-width: 760px) { .columns { grid-template-columns: 1fr; } .header-top { flex-direction: column; align-items: flex-start; } }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 1.35rem 1.5rem; margin-bottom: 1.25rem; box-shadow: 0 6px 20px rgba(14,58,93,.07); }
+.card.teal { background: #e6f2fb; border-color: #c4e0f2; }
+.card.gold { border-left: 5px solid var(--sky); background: #f0f7fd; }
+.card h2, .card h3 { margin-top: 0; }
+.muted { color: var(--muted); font-size: .95rem; }
+
+/* Embeds — soft rounded boxes */
+.embed { width: 100%; min-height: 340px; border: 1px solid var(--line); border-radius: 14px; background: #fff; overflow: hidden; display: flex; align-items: center; justify-content: center; text-align: center; padding: 0; color: var(--muted); box-shadow: 0 4px 14px rgba(14,58,93,.06); }
+.embed.tall { min-height: 560px; }
+.embed iframe { width: 100%; height: 100%; min-height: 340px; border: 0; display: block; }
+.embed.tall iframe { min-height: 560px; }
+.button { display: inline-block; background: linear-gradient(135deg, #1b6aa6, #2f8fc7); color: #fff !important; text-decoration: none; font-weight: 800; padding: .7rem 1.25rem; border-radius: 999px; margin: .25rem .5rem .25rem 0; box-shadow: 0 4px 12px rgba(27,106,166,.25); }
+.button.secondary { background: var(--navy); }
+.button:hover { filter: brightness(1.07); }
+ul.tight li, ol.tight li { margin-bottom: .4rem; }
+.conference { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; align-items: start; }
+@media (max-width: 760px) { .conference { grid-template-columns: 1fr; } }
+.date-line { font-weight: 800; color: var(--navy); font-size: 1.08rem; }
+
+/* Officer footer — soft blue, same on every tab */
+.officers { background: #dbeeff; color: var(--navy); padding: 2rem 1.5rem 2.25rem; border-top: 1px solid #c4e0f2; }
+.officers h2 { color: var(--navy); margin-bottom: .25rem; }
+.officers .muted { color: #4a647c; }
+.officer-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; margin-top: 1.25rem; }
+@media (max-width: 760px) { .officer-grid { grid-template-columns: repeat(2, 1fr); } }
+.officer { text-align: center; background: #fff; border-radius: 16px; padding: 1rem .5rem; box-shadow: 0 4px 14px rgba(14,58,93,.07); }
+.officer img { width: 100%; max-width: 110px; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 50%; border: 3px solid var(--sky-light); background: #e6f2fb; display: block; margin: 0 auto .6rem; }
+.officer .initials { width: 96px; height: 96px; border-radius: 50%; border: 3px solid var(--sky-light); background: linear-gradient(135deg, #1b6aa6, #4aa3df); color: #fff; font-weight: 800; font-size: 1.5rem; display: flex; align-items: center; justify-content: center; margin: 0 auto .6rem; }
+.officer .name { font-weight: 800; color: var(--navy); }
+.officer .role { color: var(--muted); font-size: .92rem; }
+.site-footer { text-align: center; color: var(--muted); font-size: .88rem; padding: 1rem; }
+.todo { background: #e6f2fb; border: 1px solid #bcd9ee; border-radius: 8px; padding: .4rem .65rem; font-size: .92rem; }
